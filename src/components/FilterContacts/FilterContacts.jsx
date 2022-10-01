@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { Form, Label, Input } from './FilterContacts.styled';
+
 export function FilterContacts({ onChange, filter }) {
   return (
-    <>
-      <label htmlFor="">Find Contacts by name</label>
-      <input type="text" name="filter" value={filter} onChange={onChange} />
-    </>
+    <Form>
+      <Label htmlFor="">Find Contacts by name</Label>
+      <Input type="text" name="filter" value={filter} onChange={onChange} />
+    </Form>
   );
 }
 

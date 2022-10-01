@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
 
+import { Form, Label, Input, Button } from './FormAddPhone.styled';
+
 export class FormAddPhone extends Component {
   state = {
     name: '',
@@ -31,10 +33,10 @@ export class FormAddPhone extends Component {
   render() {
     const { nameId, numberId, handleSubmit, handleChange } = this;
     return (
-      <form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor={nameId}>Name</label>
-          <input
+          <Label htmlFor={nameId}>Name</Label>
+          <Input
             id={nameId}
             name="name"
             type="text"
@@ -47,8 +49,8 @@ export class FormAddPhone extends Component {
         </div>
 
         <div>
-          <label htmlFor={numberId}>Number</label>
-          <input
+          <Label htmlFor={numberId}>Number</Label>
+          <Input
             id={numberId}
             name="number"
             type="tel"
@@ -59,9 +61,10 @@ export class FormAddPhone extends Component {
             required
           />
         </div>
-
-        <button>Add contact</button>
-      </form>
+        <div>
+          <Button>Add contact</Button>
+        </div>
+      </Form>
     );
   }
 }
